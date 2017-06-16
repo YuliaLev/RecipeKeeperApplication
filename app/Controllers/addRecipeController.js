@@ -72,7 +72,6 @@ app.controller('addRecipeController', function ($scope, categoriesOfDishesValue,
             $scope.addCookingMethodOfRecipe($scope.cookingMethodOfRecipe);
         }
         if($scope.ingredientsArr.length && $scope.cookingMethodsArr.length) {
-            debugger;
             $scope.id = recipesService.countId();
             $scope.recipe = new recipeFactory.createNewRecipe($scope.titleOfRecipe, $scope.id, $scope.categoryOfRecipe, $scope.preparationTimeOfRecipe, $scope.cookingTimeOfRecipe, $scope.totalTime, $scope.personsAmountOfRecipe, $scope.descriptionOfRecipe, $scope.flagFavorite, $scope.ingredientsArr, $scope.cookingMethodsArr, $scope.fileName);
             recipesService.recipesArr.push($scope.recipe);
