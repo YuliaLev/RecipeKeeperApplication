@@ -1,0 +1,9 @@
+
+.icon-basket:before { content: '\e800'; } /* '' */
+.icon-plus:before { content: '\e801'; } /* '' */
+.icon-search:before { content: '\e802'; } /* '' */
+.icon-youtube:before { content: '\e803'; } /* '' */
+.icon-stopwatch:before { content: '\e804'; } /* '' */
+.icon-hourglass:before { content: '\e805'; } /* '' */
+.icon-food:before { content: '\e806'; } /* '' */
+.icon-fast-food:before { content: '\e815'; } /* '' */

@@ -1,0 +1,10 @@
+body {
+    padding-top: 20px;
+    background: #e0e0e0;
+}
+
+.bodyContainer {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}

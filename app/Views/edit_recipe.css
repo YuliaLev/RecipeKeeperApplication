@@ -1,0 +1,411 @@
+.editRecipePageWrapper {
+    width: 1200px;
+    margin: auto;
+    padding-left: 120px;
+    position: relative;
+}
+
+/*noinspection CssUnknownTarget,CssUnknownTarget*/
+#editRecipePage {
+    min-height: 500px;
+    width: 1000px;
+    background: url("/images/22.jpg") repeat;
+}
+
+.buttonsSection {
+    position: absolute;
+    left: 0;
+}
+
+.buttonsSection .square{
+    background-color: #74d1b6;
+    width: 110px;
+    height: 110px;
+    margin: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px 5px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.buttonsSection .square:active{
+    background-color: #70c3ab;
+}
+
+.buttonsSection  .glyphicon, .buttonsSection  .icon {
+    font-size: 34px;
+    color: white;
+    margin-bottom: 13px;
+}
+
+#editRecipePage .editRecipeSection, #editRecipePage .editRecipeIngredientsSection {
+    background-color: #ebebeb;
+    min-height: 502px;
+    border: 1px solid transparent;
+    margin: 5px 125px;
+    width: 750px;
+    position: relative;
+}
+
+#editRecipePage .editRecipeSection {
+    margin: 5px 90px;
+    width: 830px;
+    padding-left: 43px;
+    padding-top: 10px;
+}
+
+#editRecipePage .editRecipeIngredientsSection {
+    width: 850px;
+    margin: 5px 75px;
+}
+
+#editRecipePage .message {
+    position: absolute;
+    left: 42px;
+    bottom: 0;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 700px;
+}
+
+#editRecipePage .editRecipeSection .nextBtn {
+    position: absolute;
+    right: 6px;
+    bottom: 10px;
+}
+
+.titleSectionEdit, .categorySectionEdit, .preparationTimeSectionEdit, .cookTimeSectionEdit, .totalTimeSectionEdit,
+.personsAmountSectionEdit, .descriptionSectionEdit, .favoriteSectionEdit {
+    border-left: 6px solid #a2b82c;
+    height: 55px;
+    background: white;
+    margin: 7px 7px 0 7px;
+    padding-left: 10px;
+}
+
+.favoriteSectionEdit, .categorySectionEdit {
+    margin-top: 0;
+}
+
+.preparationTimeSectionEdit, .cookTimeSectionEdit {
+    margin-top: 12px;
+}
+
+.descriptionSectionEdit {
+    height: 120px;
+    margin-top: 12px;
+    width: 740px;
+    margin-left: 0;
+}
+
+.favoriteSectionEdit {
+    width: 740px;
+    margin-left: 0;
+}
+
+.editRecipeSection .photoSectionEdit {
+    display: inline-block;
+    background: white;
+    float: left;
+    height: 239px;
+    width: 285px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 7px;
+}
+
+input[type=file] {
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+.editRecipeSection .photoSectionEdit img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.editRecipeSection .titleSectionEdit, .editRecipeSection .categorySectionEdit {
+    display: inline-block;
+    width: 448px;
+    vertical-align: top;
+}
+
+.preparationTimeSectionEdit, .cookTimeSectionEdit, .totalTimeSectionEdit, .personsAmountSectionEdit {
+    vertical-align: top;
+    width: 215px;
+    display: inline-block;
+}
+
+.editRecipeSection input.mini {
+    width: 50px;
+}
+
+button.close {
+    position: absolute;
+    margin-left: 10px;
+}
+
+.editRecipeSection .titleSectionEdit input {
+    outline: none;
+    width: 93%;
+}
+
+#editRecipePage .circleIcon {
+    background-color: #a2b82c;
+    font-size: 17px;
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    display: inline-block;
+    color: white;
+    margin-right: 7px;
+}
+
+.editRecipeSection .favoriteSectionEdit .glyphicon-star, .editRecipeSection .favoriteSectionEdit .glyphicon-star-empty {
+    font-size: 24px;
+    color: orange;
+    position: relative;
+    left: 5px;
+}
+
+.editRecipeSection .favoriteSectionEdit .fav {
+    cursor: pointer;
+    display: inline-block;
+}
+
+#editRecipePage ol {
+    padding-left: 20px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection, .editRecipeIngredientsSection  .editCookingMethodSection {
+    background-color: white;
+    min-height: 500px;;
+}
+
+.editRecipeIngredientsSection .plusBtn {
+    top: 21px;
+    right: 15px;
+    font-size: 29px;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection ol li {
+    margin-top: 5px;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection ol {
+    margin-bottom: 40px;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection .newIngredientForm,
+.editRecipeIngredientsSection  .editCookingMethodSection .newCookingMethodForm {
+    margin: 40px 0;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection .newIngredientForm input,
+.editRecipeIngredientsSection  .editCookingMethodSection .newCookingMethodForm textarea {
+    width: 100%;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection .newIngredientForm .addIngrBtn {
+    position: relative;
+    right: -88px;
+    top: 5px;
+}
+
+.editRecipeIngredientsSection .editCookingMethodSection .newCookingMethodForm .addMethodBtn {
+    position: relative;
+    right: -416px;
+}
+
+.editRecipeIngredientsSection .editIngredientsSection {
+    background-color: #ebebeb;
+}
+
+.editRecipeIngredientsSection .saveBtn {
+    position: absolute;
+    right: 6px;
+    bottom: 10px;
+    outline: none;
+}
+
+.delBtn {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    outline: none;
+    color: #0f0f0f;
+    opacity: 0.45;
+    font-size: 20px;
+}
+
+.savedRecipeSection .delBtn:hover, .savedRecipeSection .delBtn:active {
+    opacity: 0.65;
+}
+
+#editRecipePage .editRecipeIngredientsSection .message {
+    left: 300px;
+    width: 440px;
+}
+
+.editRecipeIngredientsSection .backBtn {
+    position: absolute;
+    left: 6px;
+    bottom: 10px;
+    outline: none;
+}
+
+.editRecipeIngredientsSection textarea {
+    width: 90%;
+}
+
+#editRecipePage .savedRecipeSection {
+    background-color: #ebebeb;
+    min-height: 500px;
+    border: 1px solid transparent;
+    width: 1000px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#editRecipePage  .savedRecipeSection .editBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    outline: none;
+    color: #0f0f0f;
+    opacity: 0.45;
+    font-size: 20px;
+}
+
+#editRecipePage .savedRecipeSection .editBtn:hover, #editRecipePage .savedRecipeSection .editBtn:active {
+    opacity: 0.65;
+    font-size: 20px;
+}
+
+#editRecipePage .savedRecipeSection .resultRightSection {
+    background-color: white;
+    min-height: 625px;
+}
+
+#editRecipePage  .savedRecipeSection .photoSectionResult {
+    width: 332px;
+    max-height: 242px;
+    overflow: hidden;
+    background-color: white;
+    margin-left: -15px;
+}
+
+#editRecipePage  .savedRecipeSection img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#editRecipePage  .savedRecipeSection h2, #editRecipePage .savedRecipeSection h5 {
+    padding: 0 10px;
+}
+
+#editRecipePage  .savedRecipeSection h5 {
+    margin-bottom: 35px;
+}
+
+#editRecipePage .savedRecipeSection .preparationTimeResult, #editRecipePage  .savedRecipeSection .cookTimeResult,
+#editRecipePage  .savedRecipeSection .totalTimeResult, #editRecipePage  .savedRecipeSection .personsAmountResult {
+    height: 50px;
+    margin-left: 10px;
+}
+
+#editRecipePage  .savedRecipeSection .circleIcon {
+    font-size: 18px;
+    height: 25px;
+    width: 25px;
+    border-radius: 25px;
+}
+
+#editRecipePage  .savedRecipeSection .iconBlock {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#editRecipePage  .savedRecipeSection .descriptionResult {
+    min-height: 50px;
+    background-color: #a2b82c;
+    color: white;
+    padding: 10px;
+    font-style: italic;
+    /*margin: 10px -15px;*/
+}
+
+#editRecipePage  .savedRecipeSection .resultRightSection .ingredientsResult {
+    min-height: 200px;
+}
+
+#editRecipePage  .savedRecipeSection .glyphicon-star,
+#editRecipePage  .savedRecipeSection .glyphicon-star-empty {
+    font-size: 30px;
+    color: orange;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    text-shadow: -1px 1px #fff;
+}
+
+#editRecipePage .savedRecipeSection .glyphicon {
+    position: absolute;
+}
+
+#editRecipePage  .savedRecipeSection .cookingMethodResult {
+    min-height: 350px;
+}
+
+.editRecipeIngredientsSection  .editCookingMethodSection  ol,
+#editRecipePage .savedRecipeSection .resultRightSection .cookingMethodResult ol{
+    counter-reset: myCounter;
+    margin-bottom: 40px;
+}
+.editRecipeIngredientsSection  .editCookingMethodSection li,
+#editRecipePage .savedRecipeSection .resultRightSection .cookingMethodResult li{
+    position: relative;
+    padding-left: 3em;
+    margin: 0.45em 0;
+    list-style: none;
+    line-height: 20px;
+}
+
+.editRecipeIngredientsSection  .editCookingMethodSection  li:before ,
+#editRecipePage .savedRecipeSection .resultRightSection .cookingMethodResult li:before {
+    content: counter(myCounter);
+    counter-increment: myCounter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    padding: 0;
+    color: #fff;
+    background: #74d1b6;
+    font-weight: bold;
+    text-align: center;
+    border-radius: .9em;
+    z-index: 1;
+}
+
+.editRecipeIngredientsSection  .editCookingMethodSection li:not(:last-child):after,
+#editRecipePage  .savedRecipeSection .resultRightSection .cookingMethodResult li:not(:last-child):after {
+    position: absolute;
+    top: 1.7em;
+    left: 0.8em;
+    width: 3px;
+    height: 100%;
+    content: '';
+    background-color: #74d1b6;
+    z-index: 0;
+}

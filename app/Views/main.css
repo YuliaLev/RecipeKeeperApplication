@@ -1,0 +1,459 @@
+#main .sortForm {
+    width: 24%;
+    position: relative;
+    top: -44px;
+    right: -660px;
+}
+
+#main .dateDiv {
+    position: absolute;
+    right: 47px;
+    color: #b7afaf;
+}
+
+#main .badge {
+    margin-left: 5px;
+}
+
+#main .mainButtonsSection .square{
+    background-color: #74d1b6;
+    width: 110px;
+    height: 110px;
+    margin: 0 15px 18px 0;
+    display: inline-block;
+}
+
+#main .mainButtonsSection .square:active{
+    background-color: #70c3ab;
+}
+
+#main .mainButtonsSection a {
+    width: 110px;
+    height: 110px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
+#main .mainButtonsSection .glyphicon, #main .mainButtonsSection .icon {
+    font-size: 34px;
+    color: white;
+    margin-bottom: 13px;
+}
+
+#main input:not([type=checkbox]) {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 60%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+#main .mainSection, #main .youtubeVideoSection {
+    background: white;
+    margin-top: -20px;
+    padding-top: 20px;
+    /*position: relative;*/
+}
+
+#main .categoriesOfDishesSection {
+    background: #e0e0e0;
+    padding: 30px 0;
+}
+
+#main .categoriesOfDishesSection .categoryOfDish {
+    height: 50px;
+    background-color: #e0e0e0;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+/*noinspection CssUnknownTarget,CssUnknownTarget*/
+#main .categoriesOfDishesSection .categoryImg {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 20px;
+    background-image: url("/images/foodicons.jpg");
+}
+
+#main .categoriesOfDishesSection .allDishes .categoryImg { background-position: 232px 1002px;}
+#main .categoriesOfDishesSection .allDishes:hover .categoryImg, #main .categoriesOfDishesSection .allDishes:active .categoryImg {
+    background-position: 230px 1785px;
+}
+
+#main .categoriesOfDishesSection .firstDishes .categoryImg { background-position: 172px 956px;}
+#main .categoriesOfDishesSection .firstDishes:hover .categoryImg, #main .categoriesOfDishesSection .firstDishes:active .categoryImg {
+    background-position: 170px 1739px;
+}
+
+#main .categoriesOfDishesSection .secondDishes .categoryImg { background-position: 288px 1420px;}
+#main .categoriesOfDishesSection .secondDishes:hover .categoryImg, #main .categoriesOfDishesSection .secondDishes:active .categoryImg {
+    background-position: 286px 2203px;
+}
+
+#main .categoriesOfDishesSection .salads .categoryImg { background-position: 514px 1257px;}
+#main .categoriesOfDishesSection .salads:hover .categoryImg, #main .categoriesOfDishesSection .salads:active .categoryImg {
+    background-position: 512px 2040px;
+}
+
+#main .categoriesOfDishesSection .snacks .categoryImg { background-position: 572px 1053px;}
+#main .categoriesOfDishesSection .snacks:hover .categoryImg, #main .categoriesOfDishesSection .snacks:active .categoryImg {
+    background-position: 570px 1836px;
+}
+
+#main .categoriesOfDishesSection .bakeryProducts .categoryImg { background-position: 398px 1310px;}
+#main .categoriesOfDishesSection .bakeryProducts:hover .categoryImg, #main .categoriesOfDishesSection .bakeryProducts:active .categoryImg {
+    background-position: 396px 2093px;
+}
+
+#main .categoriesOfDishesSection .desserts .categoryImg { background-position: 343px 1365px;}
+#main .categoriesOfDishesSection .desserts:hover .categoryImg, #main .categoriesOfDishesSection .desserts:active .categoryImg {
+    background-position: 341px 2148px;
+}
+
+#main .categoriesOfDishesSection .drinks .categoryImg {  background-position: 230px 1365px;}
+#main .categoriesOfDishesSection .drinks:hover .categoryImg, #main .categoriesOfDishesSection .drinks:active .categoryImg {
+    background-position: 228px 2148px;
+}
+
+#main .categoriesOfDishesSection .sauces .categoryImg {  background-position: 288px 1310px;}
+#main .categoriesOfDishesSection .sauces:hover .categoryImg, #main .categoriesOfDishesSection .sauces:active .categoryImg {
+    background-position: 286px 2093px;
+}
+
+.miniRecipe {
+    background-color: #ebebeb;
+    min-height: 200px;
+    margin: 10px;
+    position: relative;
+    border: 1px solid #d8d8d8;
+}
+
+.miniRecipe .titleOfRecipe h2{
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.miniRecipe a.titleOfRecipe {
+    text-decoration: none;
+    color: #666;
+}
+
+.miniRecipe a.titleOfRecipe:hover, .miniRecipe a.titleOfRecipe:active {
+    color: #222;
+}
+
+.miniRecipe .editBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #0f0f0f;
+    opacity: 0.45;
+    font-size: 20px;
+}
+
+.miniRecipe .editBtn:hover,.miniRecipe .editBtn:active {
+    opacity: 0.65;
+    font-size: 20px;
+}
+
+.miniRecipeRightSide{
+    padding-top: 15px;
+    background-color: white;
+}
+
+.miniRecipe .photo {
+    max-height: 242px;
+    min-width: 285px;
+    background-color: white;
+    overflow: hidden;
+    margin-left: -15px;
+}
+.miniRecipe .photo .glyphicon {
+    position: absolute;
+}
+
+.mainSection  .miniRecipe .photo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.miniRecipe .glyphicon-star-empty, .miniRecipe .glyphicon-star {
+    font-size: 30px;
+    color: orange;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    text-shadow: -1px 1px #fff;
+}
+
+.miniRecipe h5 {
+    margin-bottom: 20px;
+}
+
+.miniRecipe .showMoreBtn, .miniRecipe .hideMoreBtn {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    padding: 5px 11px;
+    margin-top: 25px;
+    outline: none;
+    background: #e4c6f5;
+}
+
+.miniRecipe .showMoreBtn:hover, .miniRecipe .hideMoreBtn:hover, .miniRecipe .showMoreBtn:active, .miniRecipe .hideMoreBtn:active {
+    background: #cab1d8;
+}
+
+.miniRecipe .hideMoreBtn {
+    bottom: 5px;
+    left: 5px;
+}
+
+.miniRecipe .moreInfoSection {
+    margin-bottom: 60px;
+}
+
+.mainSection .preparationTime, .mainSection .cookingTime, .mainSection .totalTime, .mainSection .personsAmount{
+    height: 53px;
+    width: 240px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 7px 3px 0 0;
+    background-color: #ebebeb;
+}
+
+.mainSection .totalTime, .mainSection .personsAmount {
+    margin-bottom: 20px;
+}
+
+.mainSection .circleIcon {
+    background-color: #a2b82c;
+    font-size: 17px;
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    display: inline-block;
+    color: white;
+    margin-right: 7px;
+}
+
+.mainSection  .iconBlock {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mainSection  .description {
+    background-color: #74d1b6;
+    color: white;
+    padding: 10px;
+    font-style: italic;
+}
+
+.descriptionList ol{
+    counter-reset: myCounter;
+    padding-left: 15px;
+    padding-bottom: 30px;
+}
+
+.descriptionList li{
+    position: relative;
+    padding-left: 3em;
+    margin: 0.45em 0;
+    list-style: none;
+    line-height: 1.8em;
+}
+
+.descriptionList li:before {
+    content: counter(myCounter);
+    counter-increment: myCounter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    padding: 0;
+    color: #fff;
+    background: #a2b82c;
+    font-weight: bold;
+    text-align: center;
+    border-radius: .9em;
+    z-index: 1;
+}
+
+.descriptionList li:not(:last-child):after {
+    position: absolute;
+    top: 1.7em;
+    left: 0.8em;
+    width: 3px;
+    height: 100%;
+    content: '';
+    background-color: #a2b82c;
+    z-index: 0;
+}
+
+#main div.videoInList {
+    min-height: 200px;
+    padding: 10px 20px 10px 15px;
+    margin: 5px 0;
+    border: 1px solid lightgrey;
+}
+
+#main div.videoInList:hover {
+    background-color: #f7f7f7;
+}
+
+#main .videoInList h4 {
+    width: 750px;
+    font-size: 19px;
+}
+
+#main .videoInList h4:hover, #main .videoInList h4:active {
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+#main .searchVideoBtn {
+    top: -1px;
+    position: relative;
+}
+
+#main .videoInList img {
+   cursor: pointer;
+   float: left;
+   margin-right: 20px;
+}
+
+#main .videoPlayer {
+    text-align: center;
+    margin: 30px -15px 30px -15px;
+    background-color: #c0c7c5;
+}
+
+/*noinspection CssUnknownTarget,CssUnknownTarget*/
+.shoppingList {
+    font-family: 'Lobster', cursive;
+    min-height: 400px;
+    background: url("/images/3.jpg") 16% 0;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.shoppingList .isDone {
+    text-decoration: line-through;
+    background-color: #e0e0e0;
+}
+
+.shoppingList .ingredientsInListSection input {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+}
+
+.shoppingList .ingredientsInListSection button.close {
+    right: 20px;
+    top: 13px;
+}
+
+.shoppingList .newShoppingListSection, .shoppingList .shoppingListForRecipeSection {
+    font-size: 19px;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 100px 70px;
+    position: relative;
+    padding: 20px 30px;
+    background-color: white;
+    box-shadow: 0 0 8px 5px lightgrey;
+}
+
+.shoppingList select {
+    width: 140px;
+    margin: 7px;
+    font-size: 15px;
+}
+
+.createBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 23px;
+    background-color: orange;
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+}
+
+.createBtn:hover, .createBtn:active {
+    background-color: #fd9900;
+}
+
+.shoppingList .addIngredientsInListSection, .shoppingList .ingredientsInListSection {
+    min-height: 400px;
+    padding: 30px 30px 15px 30px;
+    overflow: auto;
+    line-height: 1.9;
+}
+
+.shoppingList .listSection {
+    background-color: #fff4f4;
+}
+
+.shoppingList .ingredientsInListSection {
+    background-color: white;
+    font-size: 17px;
+}
+
+.shoppingList .addIngredientsInListSection .createBtn {
+    position: relative;
+    bottom: -3px;
+    left: 7px;
+    line-height: 35px;
+}
+
+.shoppingList .addIngredientsInListSection h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.shoppingList .addIngredientsInListSection .createNewListBtn {
+    position: relative;
+    bottom: -180px;
+    padding: 3px 11px;
+    margin-top: 25px;
+    outline: none;
+    background: #e4c6f5;
+    border: none;
+    border-radius: 4px;
+    font-size: 19px;
+}
+
+.shoppingList .addIngredientsInListSection .createNewListBtn:hover, .shoppingList .addIngredientsInListSection .createNewListBtn:active {
+    background: #cab1d8;
+}
+
+.list-group-item {
+    padding: 7px 15px;
+    text-align: left;
+    position: relative;
+}

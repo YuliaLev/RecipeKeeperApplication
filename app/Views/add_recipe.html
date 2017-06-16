@@ -1,0 +1,136 @@
+<div class="addRecipePageWrapper">
+    <div id="addRecipePage">
+        <div class="buttonsSection">
+            <div class="square"><a href="/#main"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><br><span>На главную страницу</span></a></div><br>
+            <div class="square" ng-click="editRecipe(recipe.id)" ng-show="flagSavedRecipeSection"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><br><span>Редактировать рецепт</span></div><br>
+            <div class="square" ng-click="addNewRecipe()" ng-show="flagSavedRecipeSection"><span class="icon icon-plus" aria-hidden="true"></span><br><span>Новый рецепт</span></div><br>
+        </div>
+        <div class="addRecipeSection" ng-hide="flagNextSection">
+            <div class="photoSection">
+                <img ng-src="uploads/{{fileName}}"  ng-init="fileName='noPhoto.jpg'"><br>
+                <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+            </div>
+            <div class="titleSection">
+                <span>Название</span><br>
+                <input type="text" ng-model="titleOfRecipe">
+            </div>
+            <div class="categorySection">
+                <span>Категория</span><br>
+                <select ng-model="categoryOfRecipe">
+                    <option value="">---Выберите категорию---</option>
+                    <option ng-repeat="category in categories" value="{{$index}}">{{category}}</option>
+                </select>
+            </div>
+            <div class="preparationTimeSection">
+                <span>Время подготовки</span><br>
+                <div class="circleIcon icon icon-hourglass"></div>
+                <input type="number" min="0" class="mini" ng-model="preparationTimeOfRecipe"><span> минут</span>
+            </div>
+            <div class="cookTimeSection">
+                <span>Время приготовления</span><br>
+                <div class="circleIcon icon icon-hourglass"></div>
+                <input type="number" min="0" class="mini" ng-model="cookingTimeOfRecipe"><span> минут</span>
+            </div>
+            <div class="totalTimeSection">
+                <span>Общее время</span><br>
+                <div class="circleIcon icon icon-hourglass"></div><span>{{totalTimeCalc()}} минут</span>
+            </div>
+            <div class="personsAmountSection">
+                <span>Количество порций</span><br>
+                <span class="circleIcon icon icon-food"></span>
+                <input type="number" min="1" class="mini" ng-model="personsAmountOfRecipe"><span> порций</span>
+            </div>
+            <div class="descriptionSection">
+                <span>Описание/заметки (поле не является обязательным)</span><br>
+                <textarea ng-model="descriptionOfRecipe" cols="95" rows="4"></textarea>
+            </div>
+            <div class="favoriteSection">
+                <div class="fav" ng-click="favorite()"><span>Добавить в избранное</span><span class="glyphicon" ng-class="{'glyphicon-star-empty': !flagFavorite , 'glyphicon-star': flagFavorite }"></span></div>
+            </div>
+            <div class="alert alert-danger message" role="alert" ng-show="flagMessage && !(titleOfRecipe !== undefined && titleOfRecipe !== '' && categoryOfRecipe !== undefined && categoryOfRecipe !== '' && preparationTimeOfRecipe !== undefined && preparationTimeOfRecipe !== null && cookingTimeOfRecipe !== undefined && cookingTimeOfRecipe !== null &&  personsAmountOfRecipe !== undefined &&  personsAmountOfRecipe !== null && personsAmountOfRecipe >= 1)"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Заполните все поля!</div>
+            <button class="nextBtn" ng-click="next()">Далее</button>
+        </div>
+        <div class="addRecipeIngredientsSection" ng-show="flagNextSection && !flagSavedRecipeSection">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 addIngredientsSection">
+                    <h3>Ингредиенты</h3><br>
+                    <ol>
+                        <li ng-repeat="i in ingredientsArr track by $index">{{i}}
+                            <button ng-click="delIngredientOfRecipe($index)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </li>
+                        <li><input type="text" ng-model="ingredientOfRecipe">
+                            <button ng-click="addIngredientOfRecipe()" type="button" class="close" aria-label="Close"><span aria-hidden="true">+</span></button>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 addCookingMethodSection">
+                    <h3>Описание приготовления</h3><br>
+                    <ol>
+                        <li ng-repeat="j in cookingMethodsArr track by $index">{{j}}
+                            <button ng-click="delCookingMethodOfRecipe($index)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </li>
+                        <li><textarea ng-model="cookingMethodOfRecipe"></textarea>
+                            <button ng-click="addCookingMethodOfRecipe()" type="button" class="close" aria-label="Close"><span aria-hidden="true">+</span></button>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="alert alert-danger message" role="alert"  ng-show="flagMessage && (!ingredientsArr.length && !ingredientOfRecipe) || flagMessage && (!cookingMethodsArr.length && !cookingMethodOfRecipe)"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Заполните все поля!</div>
+            <button class="backBtn" ng-click="next()">Вернуться назад</button>
+            <button class="saveBtn" ng-click="save()">Сохранить</button>
+        </div>
+        <div class="savedRecipeSection" ng-show="flagSavedRecipeSection">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 resultLeftSection">
+                    <div class="photoSectionResult" >
+                        <img ng-src="uploads/{{recipe.photoFile}}">
+                    </div>
+                    <h2>{{recipe.title}}</h2>
+                    <span class="glyphicon" ng-class="{'glyphicon-star': recipe.favorite }"></span>
+                    <h5>{{categories[recipe.category]}}</h5>
+                    <div class="preparationTimeResult">
+                        <div class="circleIcon icon icon-hourglass"></div>
+                        <div class="iconBlock"><span>Время подготовки</span><br>
+                            <span>{{recipe.preparationTime}} минут</span>
+                        </div>
+                    </div>
+                    <div class="cookTimeResult">
+                        <div class="circleIcon icon icon-hourglass"></div>
+                        <div class="iconBlock"><span>Время приготовления</span><br>
+                             <span>{{recipe.cookingTime}} минут</span>
+                        </div>
+                    </div>
+                    <div class="totalTimeResult">
+                        <div class="circleIcon icon icon-hourglass"></div>
+                        <div class="iconBlock"><span>Общее время</span><br>
+                            <span>{{recipe.time}} минут</span>
+                        </div>
+                    </div>
+                    <div class="personsAmountResult">
+                        <span class="circleIcon icon icon-food"></span>
+                        <div class="iconBlock"><span>Количество порций</span><br>
+                            <span>{{recipe.personsAmount}} порций</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 resultRightSection">
+                    <div class="ingredientsResult">
+                        <h3>Ингредиенты</h3>
+                        <ul>
+                            <li ng-repeat="item in recipe.ingredients track by $index">{{item}}</li>
+                        </ul>
+                    </div>
+                    <div class="descriptionResult" ng-show="recipe.description">
+                        {{recipe.description}}
+                    </div>
+                    <div class="cookingMethodResult">
+                        <h3>Описание приготовления</h3>
+                        <ol>
+                            <li ng-repeat="method in recipe.cookingMethods track by $index">{{method}}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

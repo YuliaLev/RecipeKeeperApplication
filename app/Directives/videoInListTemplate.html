@@ -1,0 +1,5 @@
+<div class="videoInList" ng-repeat="i in videoList.items" ng-init="setUrl(videoList.items[0].id.videoId)">
+    <img ng-src="{{i.snippet.thumbnails.medium.url}}" ng-click="setUrl(i.id.videoId)">
+    <h4 ng-click="setUrl(i.id.videoId)">{{i.snippet.title}}</h4>
+    <div>{{i.snippet.description}}</div>
+</div>

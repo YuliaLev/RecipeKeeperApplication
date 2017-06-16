@@ -1,0 +1,132 @@
+<div id="main">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="mainButtonsSection">
+                <div class="square" ng-show="flagShowMain" ng-click="searchYoutube()"><a href=""><span class="icon icon-youtube" aria-hidden="true"></span><br><span>Видео рецепты</span></a></div>
+                <div class="square" ng-hide="flagShowMain" ng-click="searchYoutube()"><a href=""><span class="glyphicon glyphicon-home" aria-hidden="true"></span><br><span>На главную страницу</span></a></div>
+                <div class="square"><a href="#/add_recipe" ng-click="copyFromFile()"><span class="icon icon-plus" aria-hidden="true"></span><br><span>Добавить рецепт</span></a></div><br>
+                <div class="square"  ng-hide="flagShowShoppingListSection" ng-click="showShoppingList()"><a href=""><span class="icon icon-basket" aria-hidden="true"></span><br><span>Список покупок</span></a></div>
+                <div class="square" ng-show="flagShowShoppingListSection" ng-click="showShoppingList()"><a href=""><span class="icon icon-basket" aria-hidden="true"></span><br><span>Свернуть список</span></a></div>
+                <div class="square" ng-click="searchFavorite()"><a href=""><span class="glyphicon glyphicon-star" aria-hidden="true"></span><br><span>Избранные рецепты</span></a></div>
+            </div>
+            <div class="categoriesOfDishesSection">
+                <div class="categoryOfDish allDishes" ng-click="searchCategory = undefined; flagSearchFavorite = undefined; flagShowMain = true"><div class="categoryImg"></div><span> Все рецепты  <span class="badge">{{countAll()}}</span></span></div>
+                <div class="categoryOfDish firstDishes" ng-click="searchCategory = 0; flagShowMain = true"><div class="categoryImg"></div><span> Первые блюда  <span class="badge" ng-hide="!categoryCount(0)">{{categoryCount(0)}}</span></span></div>
+                <div class="categoryOfDish secondDishes" ng-click="searchCategory = 1; flagShowMain = true"><div class="categoryImg"></div><span> Вторые блюда <span class="badge" ng-hide="!categoryCount(1)">{{categoryCount(1)}}</span></span></div>
+                <div class="categoryOfDish salads" ng-click="searchCategory = 2; flagShowMain = true"><div class="categoryImg"></div><span> Салаты <span class="badge" ng-hide="!categoryCount(2)">{{categoryCount(2)}}</span></span></div>
+                <div class="categoryOfDish snacks" ng-click="searchCategory = 3; flagShowMain = true"><div class="categoryImg"></div><span> Закуски <span class="badge" ng-hide="!categoryCount(3)">{{categoryCount(3)}}</span></span></div>
+                <div class="categoryOfDish sauces" ng-click="searchCategory = 4; flagShowMain = true"><div class="categoryImg"></div><span> Соусы <span class="badge" ng-hide="!categoryCount(4)">{{categoryCount(4)}}</span></span></div>
+                <div class="categoryOfDish bakeryProducts" ng-click="searchCategory = 5; flagShowMain = true"><div class="categoryImg"></div><span> Выпечка <span class="badge" ng-hide="!categoryCount(5)">{{categoryCount(5)}}</span></span></div>
+                <div class="categoryOfDish desserts" ng-click="searchCategory = 6; flagShowMain = true"><div class="categoryImg"></div><span> Десерты <span class="badge" ng-hide="!categoryCount(6)">{{categoryCount(6)}}</span></span></div>
+                <div class="categoryOfDish drinks" ng-click="searchCategory = 7; flagShowMain = true"><div class="categoryImg"></div><span> Напитки <span class="badge" ng-hide="!categoryCount(7)">{{categoryCount(7)}}</span></span></div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 mainSection" ng-show="flagShowMain">
+            <div class="shoppingList" ng-show="flagShowShoppingListSection">
+                <div class="newShoppingListSection" ng-hide="flagCreateShoppingList">
+                    <span>Создать новый список продуктов</span>
+                    <button class="createBtn" ng-click="createNewShoppingList()">&#10004;</button>
+                </div>
+                <div class="shoppingListForRecipeSection" ng-hide="flagCreateShoppingList">
+                    <span>Создать список продуктов для рецепта</span>
+                    <select ng-model="recipeForShoppingList">
+                        <option value="">Выберите рецепт</option>
+                        <option ng-repeat="recipe in recipesFromFile track by $index" value="{{$index}}">{{recipe.title}}</option>
+                    </select>
+                    <button class="createBtn" ng-click="createShoppingListForRecipe()">&#10004;</button>
+                </div>
+                <div class="row listSection">
+                    <div class="col-md-6 col-lg-6 col-sm-6 addIngredientsInListSection" ng-show="flagCreateShoppingList">
+                        <h4>Введите продукт и добавьте его в список:</h4>
+                        <input ng-model="newProduct">
+                        <button class="createBtn" ng-click="addToShoppingList()">&#10004;</button>
+                        <button class="createNewListBtn" ng-click="createNewList()">Новый список</button>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6 ingredientsInListSection" ng-show="flagCreateShoppingList">
+                        <div class="list-group">
+                            <div ng-repeat="item in shoppingList track by $index" class="list-group-item" ng-class="{'isDone': isDone}">
+                                <input ng-model="isDone" type="checkbox">
+                                <span>{{item}}</span>
+                                <button ng-click="delProduct($index)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr ng-show="flagShowShoppingListSection">
+            <input placeholder="Поиск" ng-model="searchProduct">
+            <select ng-model="sortfield" class="form-control sortForm">
+                <option value="date">Сортировать по</option>
+                <option value="title">алфавиту</option>
+                <option value="cookingTime">времени приготовления</option>
+                <option value="category">категории</option>
+                <option value="dateNotReverse">дате добавления</option>
+            </select>
+            <div class="miniRecipe" ng-repeat="item in recipesFromFile | orderBy: sortField(): reverse | filter:{title: searchProduct, category: searchCategory, favorite: flagSearchFavorite}">
+                <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="photo" >
+                        <span class="glyphicon" ng-class="{ 'glyphicon-star': item.favorite }"></span>
+                        <img ng-src="uploads/{{item.photoFile}}">
+                    </div>
+                    <div class="moreInfoSection" ng-show="item.flagShowMore" ng-init="item.flagShowMore = false">
+                        <h3>Ингредиенты</h3>
+                        <ul>
+                            <li ng-repeat="i in item.ingredients track by $index">{{i}}</li>
+                        </ul>
+                    </div>
+                </div>
+                    <button class="btn showMoreBtn" ng-hide="item.flagShowMore" ng-click="item.flagShowMore = true">Показать рецепт</button>
+                <div class="col-lg-8 col-md-8 col-sm-8 miniRecipeRightSide">
+                    <div class="dateDiv">{{item.date | date: "dd/MM/yyyy"}} {{item.date | date:'shortTime'}}</div>
+                    <a href="#/edit_recipe"><span class="glyphicon glyphicon-edit editBtn" ng-click="editRecipe(item.id)"></span></a>
+                    <a class="titleOfRecipe" href="#/edit_recipe"><h2 ng-click="showRecipe(item.id)">{{item.title}}</h2></a>
+                    <h5>{{categories[item.category]}}</h5>
+                    <div class="preparationTime">
+                        <div class="circleIcon icon icon-hourglass"></div>
+                        <div class="iconBlock"><span>Время подготовки</span><br>
+                            <span>{{item.preparationTime}} минут</span>
+                        </div>
+                    </div>
+                    <div class="cookingTime">
+                        <div class="circleIcon icon icon-hourglass"></div>
+                        <div class="iconBlock"><span>Время приготовления</span><br>
+                            <span>{{item.cookingTime}} минут</span>
+                        </div>
+                    </div>
+                    <div class="totalTime">
+                        <div class="circleIcon icon icon-hourglass"></div>
+                        <div class="iconBlock"><span>Общее время</span><br>
+                            <span>{{item.time}} минут</span>
+                        </div>
+                    </div>
+                    <div class="personsAmount">
+                        <span class="circleIcon icon icon-food"></span>
+                        <div class="iconBlock"><span>Количество порций</span><br>
+                            <span>{{item.personsAmount}} порций</span>
+                        </div>
+                    </div>
+                    <div class="description" ng-show="item.description && item.flagShowMore">
+                        {{item.description}}
+                    </div>
+                    <div class="descriptionList"  ng-show="item.flagShowMore">
+                        <h3>Описание приготовления</h3>
+                        <ol>
+                            <li ng-repeat="j in item.cookingMethods track by $index">{{j}}</li>
+                        </ol>
+                    </div>
+                </div>
+                    <button class="btn hideMoreBtn" ng-click="item.flagShowMore = false" ng-show="item.flagShowMore">Свернуть</button>
+                </div>
+            </div>
+        </div>
+        <div id="recipes" class="col-lg-9 col-md-9 col-sm-9 youtubeVideoSection" ng-hide="flagShowMain">
+                <input ng-model="value" type="text">
+                <button class="btn searchVideoBtn" ng-click="searchVideo(value)">Поиск видео</button>
+                <div class="videoPlayer">
+                    <iframe type="text/html" width="640" height="360" ng-src="{{playVideoUrl()}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <video-in-list></video-in-list>
+        </div>
+    </div>
+</div>
