@@ -127,7 +127,10 @@ app.controller('mainController', function ($scope, $sce, recipesService, categor
     $scope.shoppingList = [];
     $scope.addToShoppingList = function () {
         if($scope.newProduct){
-            $scope.shoppingList.push($scope.newProduct);
+            var item = {};
+            item.name = $scope.newProduct;
+            item.isDone = false;
+            $scope.shoppingList.push(item);
             $scope.newProduct = '';
         }
     };
@@ -140,7 +143,10 @@ app.controller('mainController', function ($scope, $sce, recipesService, categor
         if($scope.recipeForShoppingList !== null && $scope.recipeForShoppingList !== undefined) {
             $scope.flagCreateShoppingList = true;
             $scope.recipeKeeper[$scope.recipeForShoppingList].ingredients.forEach(function (item,i) {
-                $scope.shoppingList.push(item);
+                var product = {};
+                product.name = item;
+                product.isDone = false;
+                $scope.shoppingList.push(product);
             })
         }
     };

@@ -144,15 +144,16 @@
 .miniRecipe .titleOfRecipe h2{
     margin-top: 20px;
     display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+
+.miniRecipe .titleOfRecipe h2:hover, .miniRecipe .titleOfRecipe h2:active {
+    border-bottom: 2px solid #a2b82c;
 }
 
 .miniRecipe a.titleOfRecipe {
     text-decoration: none;
-    color: #666;
-}
-
-.miniRecipe a.titleOfRecipe:hover, .miniRecipe a.titleOfRecipe:active {
-    color: #222;
+    color: #555;
 }
 
 .miniRecipe .editBtn {

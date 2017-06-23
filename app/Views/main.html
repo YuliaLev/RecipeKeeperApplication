@@ -44,9 +44,9 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 ingredientsInListSection" ng-show="flagCreateShoppingList">
                         <div class="list-group">
-                            <div ng-repeat="item in shoppingList track by $index" class="list-group-item" ng-class="{'isDone': isDone}">
-                                <input ng-model="isDone" type="checkbox">
-                                <span>{{item}}</span>
+                            <div ng-repeat="item in shoppingList track by $index" class="list-group-item" ng-class="{'isDone': item.isDone}">
+                                <input ng-model="item.isDone" type="checkbox">
+                                <span>{{item.name}}</span>
                                 <button ng-click="delProduct($index)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
                         </div>

@@ -52,7 +52,7 @@
         </div>
         <div class="editRecipeIngredientsSection" ng-show="flagNextSection && !flagSavedRecipeSection">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 editIngredientsSection">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 editIngredientsSection">
                     <h3>Ингредиенты</h3><button ng-click="addIngredientForm()" type="button" class="close plusBtn" aria-label="Close"><span aria-hidden="true">+</span></button>
                     <ol>
                         <li ng-repeat="i in editRecipe.ingredients track by $index">
@@ -66,7 +66,7 @@
                         <button class="addIngrBtn" ng-click="addIngredient()" type="button">Сохранить ингредиент</button>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 editCookingMethodSection">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 editCookingMethodSection">
                     <h3>Описание приготовления</h3><button ng-click="addCookingMethodForm()" type="button" class="close plusBtn" aria-label="Close"><span aria-hidden="true">+</span></button>
                     <ol>
                         <li ng-repeat="j in editRecipe.cookingMethods track by $index">

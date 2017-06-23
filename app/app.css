@@ -8,3 +8,241 @@ body {
     width: 90%;
     margin: auto;
 }
+
+/*@media*/
+@media (max-width: 1315px) {
+    .bodyContainer {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1260px) {
+    .bodyContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1210px) {
+    #main .sortForm {
+        right: -630px;
+    }
+    #main .mainButtonsSection .glyphicon, #main .mainButtonsSection .icon {
+        font-size: 24px;
+    }
+    #main .mainButtonsSection a {
+        width: 100px;
+        height: 100px;
+    }
+    #main .mainButtonsSection .square {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 1160px) {
+    #main .sortForm {
+        top: 0;
+        right: -10px;
+        width: 35%;
+    }
+    .mainSection .preparationTime, .mainSection .cookingTime, .mainSection .totalTime, .mainSection .personsAmount {
+        width: 210px;
+    }
+    .buttonsSection .square {
+        left: 10px;
+        z-index: 1;
+    }
+    .addRecipePageWrapper, .editRecipePageWrapper {
+        padding-left: 6%;
+        width: 1000px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1080px) {
+    .mainButtonsSection {
+        padding: 0 50px;
+    }
+    .mainSection .preparationTime, .mainSection .cookingTime, .mainSection .totalTime, .mainSection .personsAmount {
+        width: 80%;
+    }
+    .mainSection .totalTime {
+        margin-bottom: 0;
+    }
+    .mainSection .personsAmount {
+        margin-bottom: 8px;
+    }
+    #main .mainButtonsSection .glyphicon, #main .mainButtonsSection .icon {
+        font-size: 32px;
+    }
+    #main .mainButtonsSection a {
+        width: 110px;
+        height: 110px;
+    }
+    #main .mainButtonsSection .square {
+        width: 110px;
+        height: 110px;
+    }
+    #addRecipePage, #editRecipePage {
+        width: 860px;
+    }
+    #addRecipePage .addRecipeSection, #editRecipePage .editRecipeSection {
+        width: 754px;
+        padding-left: 5px;
+        margin: 5px 55px;
+    }
+    #addRecipePage .addRecipeIngredientsSection, #editRecipePage .editRecipeIngredientsSection {
+        width: 760px;
+        margin: 5px 50px;
+    }
+    #editRecipePage .savedRecipeSection, #addRecipePage .savedRecipeSection {
+        width: 860px;
+    }
+}
+
+@media (max-width: 930px) {
+    #main .categoriesOfDishesSection .categoryImg {
+        display: none;
+    }
+    .mainButtonsSection {
+        padding: 0 30px;
+    }
+    #addRecipePage .addRecipeSection .titleSection, #addRecipePage .addRecipeSection .categorySection, .editRecipeSection .titleSectionEdit, .editRecipeSection .categorySectionEdit {
+        width: 350px;
+    }
+    #addRecipePage .addRecipeSection .preparationTimeSection, #addRecipePage .addRecipeSection .cookTimeSection, #addRecipePage .addRecipeSection .totalTimeSection, #addRecipePage .addRecipeSection .personsAmountSection,
+    .preparationTimeSectionEdit, .cookTimeSectionEdit, .totalTimeSectionEdit, .personsAmountSectionEdit {
+        width: 166px;
+    }
+    #addRecipePage .addRecipeSection .descriptionSection, #addRecipePage .addRecipeSection .favoriteSection, .descriptionSectionEdit, .favoriteSectionEdit {
+        width: 642px;
+    }
+    #addRecipePage .addRecipeSection, #editRecipePage .editRecipeSection {
+        width: 657px;
+    }
+    #addRecipePage, #editRecipePage {
+        width: 760px;
+    }
+    #editRecipePage .savedRecipeSection, #addRecipePage .savedRecipeSection {
+        width: 790px;
+    }
+}
+
+@media (max-width: 830px) {
+    #addRecipePage, #editRecipePage  {
+        width: 657px;
+    }
+    #addRecipePage .addRecipeSection, #editRecipePage .editRecipeSection {
+        margin: 5px 0;
+    }
+    .buttonsSection .glyphicon, .buttonsSection .icon {
+        font-size: 20px;
+    }
+    .buttonsSection a, .buttonsSection .square {
+        width: 90px;
+        height: 90px;
+    }
+    .addRecipePageWrapper, .editRecipePageWrapper {
+        width: 750px;
+        padding-left: 20px;
+    }
+    #addRecipePage .addRecipeIngredientsSection, #editRecipePage .editRecipeIngredientsSection  {
+        width: 700px;
+    }
+    #editRecipePage .savedRecipeSection, #addRecipePage .savedRecipeSection {
+        width: 760px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mainButtonsSection {
+        padding: 0 70px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    #main .categoriesOfDishesSection {
+        padding: 0 0 50px 0;
+        display: inline-block;
+    }
+    #main .categoriesOfDishesSection .categoryImg {
+        display: block;
+    }
+    .mainSection .preparationTime, .mainSection .cookingTime, .mainSection .totalTime, .mainSection .personsAmount {
+        width: 250px;
+    }
+    .miniRecipe .photo {
+        margin-right: -15px;
+    }
+    #main .videoInList h4 {
+        width: auto;
+    }
+    #addRecipePage .addRecipeIngredientsSection, #editRecipePage .editRecipeIngredientsSection  {
+        width: 610px;
+    }
+    #editRecipePage .savedRecipeSection .photoSectionResult, #addRecipePage .savedRecipeSection .photoSectionResult {
+        width: 100%;
+    }
+    #editRecipePage .savedRecipeSection, #addRecipePage .savedRecipeSection {
+        width: 670px;
+    }
+}
+
+@media (max-width: 680px) {
+    .mainButtonsSection {
+        padding: 0 20px;
+    }
+    iframe {
+        width: 539px;
+    }
+    #addRecipePage .addRecipeSection .photoSection, .editRecipeSection .photoSectionEdit {
+        width: 200px;
+    }
+    #addRecipePage .addRecipeSection .descriptionSection textarea,  .descriptionSectionEdit textarea {
+        width: 500px;
+    }
+    #addRecipePage .addRecipeSection .descriptionSection, #addRecipePage .addRecipeSection .favoriteSection,  .descriptionSectionEdit, .favoriteSectionEdit {
+        width: 557px;
+    }
+    #addRecipePage .addRecipeSection, #addRecipePage, #editRecipePage .editRecipeSection, #editRecipePage {
+        width: 571px;
+    }
+    .addRecipePageWrapper, .editRecipePageWrapper {
+        width: 620px;
+    }
+    #editRecipePage .savedRecipeSection, #addRecipePage .savedRecipeSection {
+        width: 520px;
+    }
+}
+
+@media (max-width: 540px) {
+    #main .sortForm {
+        width: 55%;
+    }
+    #main .mainButtonsSection .glyphicon, #main .mainButtonsSection .icon {
+        font-size: 24px;
+    }
+    #main .videoInList img {
+        float: none;
+    }
+    iframe {
+        width: 400px;
+    }
+    #editRecipePage .savedRecipeSection, #addRecipePage .savedRecipeSection {
+        width: 390px;
+    }
+}
+
+@media (max-width: 415px) {
+    #main .categoriesOfDishesSection {
+        padding: 0 0 50px 20px;
+    }
+    #main .mainButtonsSection .glyphicon, #main .mainButtonsSection .icon {
+        font-size: 32px;
+    }
+    .addRecipePageWrapper, .editRecipePageWrapper {
+        padding-left: 0;
+    }
+    iframe {
+        width: 360px;
+    }
+}

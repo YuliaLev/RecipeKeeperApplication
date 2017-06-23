@@ -52,7 +52,7 @@
         </div>
         <div class="addRecipeIngredientsSection" ng-show="flagNextSection && !flagSavedRecipeSection">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 addIngredientsSection">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 addIngredientsSection">
                     <h3>Ингредиенты</h3><br>
                     <ol>
                         <li ng-repeat="i in ingredientsArr track by $index">{{i}}
@@ -63,7 +63,7 @@
                         </li>
                     </ol>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 addCookingMethodSection">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 addCookingMethodSection">
                     <h3>Описание приготовления</h3><br>
                     <ol>
                         <li ng-repeat="j in cookingMethodsArr track by $index">{{j}}
